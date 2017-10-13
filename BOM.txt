@@ -5,11 +5,9 @@
 a bunch of male and female pin headers
 3x M3x20mm spacers w/screws and nuts
 1x M3x5 screws with nuts
-1x 3D printed "fanbracket.stl"
+1x 3D printed "RAMPSSBSingleFanMount.stl"
 1x 40mm fan
 
 If you are dealing with a lot of power, the drivers are stackable, and two pins are included for each control pin, so you dont need to splice wires for two drivers. However, you can theoretically stack these as high as you want and run them in parallel. Drivers can handle about 2 amps per channel.
-1x 3D printed "driverspacer.stl"
-1x 40mm fan
 1x L298N DC motor driver (the square kind)
 
