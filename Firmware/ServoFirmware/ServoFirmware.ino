@@ -11,16 +11,18 @@
 //Configuration
 //Change these values for your hardware!
 #define quadrature true //Is this a quadrature encoder? If so, make true. If you are using a single encoder motor, you will lose a lot of accuracy, but make true (Coming soon!).  
-#define cpr 100.0 //How many counts per revolution? This should be written on the motor datasheet, but its best to test it anyway, because sometimes quadrature encoders have 4 times the noted ticks, because each quadrature counts as 4.
+#define cpr 2000.0 //How many counts per revolution? This should be written on the motor datasheet, but its best to test it anyway, because sometimes quadrature encoders have 4 times the noted ticks, because each quadrature counts as 4.
 #define mmpr 10 //Millimeters per revolution. This is the DC motor version of "steps per mm" and varies with hardware and gearing. this is easy to test by marking your carriage, rotating the encoder shaft 1 full revolution and measure the distance the carriage moved. 
 #define steps_per_mm 80 //What are the steps per mm that the firmware on the RAMPS is using?
-#define kp 5 //Proportional Constant. Used for PID control. Tune this to your hardware to get better accuracy. 
+#define kp 10 //Proportional Constant. Used for PID control. Tune this to your hardware to get better accuracy. 
 #define ki 0 //Integral Constant. Used for PID control. Tune this to your hardware to get better accuracy.
-#define kd 5 //Derivative Constant. Used for PID control. Tune this to your hardware to get better accuracy.
+#define kd 1 //Derivative Constant. Used for PID control. Tune this to your hardware to get better accuracy.
 #define diagnostic true //If true, sets machine to diagnostic. Prints out location values over serial and can do PID autotuning. Causes a heart attack and bad location data if kept on, so uses it to get PID values and then turn it off.
 #define endstopinverted false //By default, endstops are NO. If you are using an NC endstop (like an optical one), change to true.
 #define maxpwm 255 //Max PWM you can use on the motor and still read the encoder. For most small encoders that are 100 counts per rev or so, or the speed is low, you can go up to 255, but if you are using faster motors with higher encoder counts, the arduino may freeze up unless you lower this number.  
-#define minpwm 85 //Min PWM you can use on the motor spin.
+#define minpwm 110 //Min PWM you can use to make the motor spin.
+#define acceptable_error 0.02 //acceptable error for positioning in mm. so long at the carriage is within this value, it will stop. Lowering this value increases accuracy, but my cause wobbling. 
+
 
 //Define Pins
 #define dir 1
@@ -32,7 +34,6 @@
 #define encod1 2
 #define encod2 3
 #define endstop 7
-#define led 13
 
 //encoder Setup
 Encoder myEnc(encod1, encod2); //declare encoder
@@ -51,7 +52,7 @@ volatile int direct = 0; //What direction are we going? 0 is towards home, 1 is 
 //volatile float current = 0; //where are we now? Reset at home
 volatile long ticks = 0; //the number of encoder ticks from home we are.
 volatile long counts = 0; //number of encoder ticks we are trying to target.
-float error = 0.05; //acceptable error in mm of final position.
+float error = acceptable_error; //acceptable error in mm of final position.
 float CPR = cpr; //turn #define into a float
 float MMPR = mmpr; //turn #define into a float
 float spmm = steps_per_mm; //turn #define into a float
@@ -67,7 +68,6 @@ void setup()
   pinMode(pwmout, OUTPUT);
   pinMode(dir1, OUTPUT);
   pinMode(dir2, OUTPUT);
-  pinMode(led, OUTPUT);
 
   //start diagnostic mode
   if (diagnostic == true)

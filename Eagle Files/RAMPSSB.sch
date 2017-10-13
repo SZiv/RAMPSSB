@@ -15285,7 +15285,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-15.24" y="10.16" size="1.778" layer="97">Fan Pins, Endstop Power and 5V Rails</text>
 <text x="152.4" y="10.16" size="1.778" layer="97">Mechanical Standoffs</text>
 <text x="139.7" y="55.88" size="1.778" layer="97">Stepper Interface</text>
-<text x="157.48" y="134.62" size="1.778" layer="97">Arduino Pro Micros</text>
+<text x="154.94" y="134.62" size="1.778" layer="97">Arduino Pro Micros</text>
 <text x="48.26" y="5.08" size="5.08" layer="97">RAMPSSB</text>
 <text x="40.64" y="0" size="3.81" layer="97">RAMPS Servo Board</text>
 <text x="58.42" y="-5.08" size="3.81" layer="97">V1.0</text>
