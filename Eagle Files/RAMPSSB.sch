@@ -15487,6 +15487,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="160.528" y="-1.524"/>
 <label x="167.64" y="5.08" size="1.778" layer="95" rot="R90"/>
 </segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="GND@1"/>
+<wire x1="91.44" y1="22.86" x2="96.52" y2="22.86" width="0.1524" layer="91"/>
+<label x="93.98" y="22.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$7" gate="G$1" pin="GND@1"/>
+<wire x1="149.86" y1="22.86" x2="154.94" y2="22.86" width="0.1524" layer="91"/>
+<label x="152.4" y="22.86" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="XDIR1" class="0">
 <segment>
