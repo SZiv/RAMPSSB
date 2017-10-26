@@ -1,5 +1,5 @@
 # RAMPSSB
-Be sure to take a look at the Wiki before attempting a build: http://reprap.org/wiki/RAMPSSB and if you are curious more as to the development and technological reasoning behind this project, take a look at my blog post at http://scottziv.com/rampssb-bringing-closed-loop-dc-motor-control-to-3d-printers/
+=== Be sure to take a look at the Wiki before attempting a build: http://reprap.org/wiki/RAMPSSB and if you are curious more as to the development and technological reasoning behind this project, take a look at my blog post at http://scottziv.com/rampssb-bringing-closed-loop-dc-motor-control-to-3d-printers/ ===
 
 RAMPS Servo Board. Released under GPLv3.
 
