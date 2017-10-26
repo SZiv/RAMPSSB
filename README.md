@@ -3,7 +3,7 @@
 
 RAMPS Servo Board. Released under GPLv3.
 
-Replaces the X and Y stepper drivers on a RAMPS CNC control board with two channel DC motor quadrature encoder control using cheap, common, easy to solder components.
+Replaces the X and Y stepper drivers on a RAMPS CNC control board with two channel DC motor quadrature encoder control using cheap, common, easy to solder components. Compatable with almost any 0-24V DC motor with a quadrature encoder that uses hall effect, optical, or mechanical rotary encoders. 
 
 Uses a square L298N DC motor driver, attached with standoffs to the PCB, over 2 Arduino Pro Micros for control. PCB board is less than 100m square, so it can be produced for $5 + shipping from Seeedstudio, and the L298N driver board is cheap (like $3), and the controllers, Pro Micros, are maybe 5 bucks a piece.
 
